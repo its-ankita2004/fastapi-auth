@@ -13,7 +13,7 @@ models.Base.metadata.create_all(bind=engine)
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:4200","https://its-ankita2004.github.io"],  
+    allow_origins=["https://its-ankita2004.github.io"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -60,7 +60,7 @@ def login(user: schemas.UserLogin, db: Session = Depends(get_db)):
         value=token,
         httponly=True,
         secure=True,  # Set to True in production with HTTPS
-        samesite="Lax"
+        samesite="None"
     )
     return response
 
