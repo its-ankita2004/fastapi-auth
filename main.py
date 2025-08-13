@@ -13,7 +13,7 @@ models.Base.metadata.create_all(bind=engine)
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:4200"],  # You can onlu allow it to ["http://localhost:4200"] for Angular dev
+    allow_origins=["*"],  # You can onlu allow it to ["http://localhost:4200"] for Angular dev
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
