@@ -13,7 +13,7 @@ models.Base.metadata.create_all(bind=engine)
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://its-ankita2004.github.io"],  
+    allow_origins=["http://localhost:4200","https://its-ankita2004.github.io"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
