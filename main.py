@@ -59,7 +59,7 @@ def login(user: schemas.UserLogin, db: Session = Depends(get_db)):
         key="access_token",
         value=token,
         httponly=True,
-        secure=False,  # Set to True in production with HTTPS
+        secure=True,  # Set to True in production with HTTPS
         samesite="Lax"
     )
     return response
